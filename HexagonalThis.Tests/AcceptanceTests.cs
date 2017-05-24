@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 using NFluent;
 using NSubstitute;
 using NUnit.Framework;
@@ -20,7 +22,7 @@ namespace HexagonalThis.Tests
         public void Should_give_some_verses_when_asking_lines_to_the_hexagon()
         {
             var poetryProvider = Substitute.For<IKnowLotsOfPoetry>();
-            poetryProvider.FindPoem().Returns("If you could read a leaf or tree\r\nyou’d have no need of books.\r\n-- © Alistair Cockburn (1987)");
+            poetryProvider.FindRandomPoem().Returns("If you could read a leaf or tree\r\nyou’d have no need of books.\r\n-- © Alistair Cockburn (1987)");
 
             var hexagon = new Hexagon(poetryProvider);
 
@@ -30,20 +32,25 @@ namespace HexagonalThis.Tests
 
     public class Hexagon : IProvideVerses
     {
+        private readonly IKnowLotsOfPoetry poetryProvider;
+
         public string GiveMeVerses(int numberOfVerse)
         {
-            throw new NotImplementedException();
+            var poem = this.poetryProvider.FindRandomPoem();
+            var lines = poem.Split(new []{"\r\n"}, StringSplitOptions.RemoveEmptyEntries);
+
+            return string.Join("\r\n", lines.Take(numberOfVerse));
         }
 
         public Hexagon(IKnowLotsOfPoetry poetryProvider)
         {
-            throw new NotImplementedException();
+            this.poetryProvider = poetryProvider;
         }
     }
 
     public interface IKnowLotsOfPoetry
     {
-        string FindPoem();
+        string FindRandomPoem();
     }
 
     public interface IProvideVerses
