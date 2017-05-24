@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}</ProjectGuid>
+    <ProjectGuid>{316BF5FF-4756-4C4A-BC8C-906EDFB0DB20}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HexagonalThis.Tests</RootNamespace>
-    <AssemblyName>HexagonalThis.Tests</AssemblyName>
+    <RootNamespace>HexagonalThis.Domain</RootNamespace>
+    <AssemblyName>HexagonalThis.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,18 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NFluent, Version=2.0.0.44, Culture=neutral, PublicKeyToken=18828b37b84b1437, processorArchitecture=MSIL">
-      <HintPath>..\packages\NFluent.2.0.0-alpha-44\lib\net40\NFluent.dll</HintPath>
-    </Reference>
-    <Reference Include="NSubstitute, Version=2.0.3.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\NSubstitute.2.0.3\lib\net45\NSubstitute.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,21 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcceptanceTests.cs" />
+    <Compile Include="IKnowLotsOfPoetry.cs" />
+    <Compile Include="IProvideVerses.cs" />
+    <Compile Include="Poet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HexagonalThis.Domain\HexagonalThis.Domain.csproj">
-      <Project>{316bf5ff-4756-4c4a-bc8c-906edfb0db20}</Project>
-      <Name>HexagonalThis.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HexagonalThis.Infra\HexagonalThis.Infra.csproj">
-      <Project>{2df2a5b6-7267-4119-bb0f-37aaa6c2259e}</Project>
-      <Name>HexagonalThis.Infra</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

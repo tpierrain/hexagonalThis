@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Tests", "HexagonalThis.Tests\HexagonalThis.Tests.csproj", "{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Domain", "HexagonalThis.Domain\HexagonalThis.Domain.csproj", "{316BF5FF-4756-4C4A-BC8C-906EDFB0DB20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Infra", "HexagonalThis.Infra\HexagonalThis.Infra.csproj", "{2DF2A5B6-7267-4119-BB0F-37AAA6C2259E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{316BF5FF-4756-4C4A-BC8C-906EDFB0DB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{316BF5FF-4756-4C4A-BC8C-906EDFB0DB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{316BF5FF-4756-4C4A-BC8C-906EDFB0DB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{316BF5FF-4756-4C4A-BC8C-906EDFB0DB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF2A5B6-7267-4119-BB0F-37AAA6C2259E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF2A5B6-7267-4119-BB0F-37AAA6C2259E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF2A5B6-7267-4119-BB0F-37AAA6C2259E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF2A5B6-7267-4119-BB0F-37AAA6C2259E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

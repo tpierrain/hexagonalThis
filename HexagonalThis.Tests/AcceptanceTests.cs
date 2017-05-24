@@ -1,7 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using Newtonsoft.Json;
+﻿using HexagonalThis.Tests.Domain;
+using HexagonalThis.Tests.Infra;
 using NFluent;
 using NSubstitute;
 using NUnit.Framework;
@@ -42,64 +40,6 @@ namespace HexagonalThis.Tests
 
             var verses = jsonAdapter.Post("{ \"numberOfLines\": 3}");
             Check.That(verses).IsEqualTo(alisterPoem);
-        }
-    }
-
-    public class JsonAdapter
-    {
-        private readonly IProvideVerses verseProvider;
-
-        public JsonAdapter(IProvideVerses verseProvider)
-        {
-            this.verseProvider = verseProvider;
-        }
-
-        public string Post(string jsonRequest)
-        {
-            var request = JsonConvert.DeserializeObject<JsonRequest>(jsonRequest);
-
-            return this.verseProvider.GiveMeVerses(request.numberOfLines);
-        }
-    }
-
-    public class JsonRequest
-    {
-        public int numberOfLines;
-    }
-
-    public class Hexagon : IProvideVerses
-    {
-        private readonly IKnowLotsOfPoetry poetryProvider;
-
-        public string GiveMeVerses(int numberOfVerse)
-        {
-            var poem = this.poetryProvider.FindRandomPoem();
-            var lines = poem.Split(new []{"\r\n"}, StringSplitOptions.RemoveEmptyEntries);
-
-            return string.Join("\r\n", lines.Take(numberOfVerse));
-        }
-
-        public Hexagon(IKnowLotsOfPoetry poetryProvider)
-        {
-            this.poetryProvider = poetryProvider;
-        }
-    }
-
-    public interface IKnowLotsOfPoetry
-    {
-        string FindRandomPoem();
-    }
-
-    public interface IProvideVerses
-    {
-        string GiveMeVerses(int numberOfVerse);
-    }
-
-    public class Poet : IProvideVerses
-    {
-        public string GiveMeVerses(int numberOfVerse)
-        {
-            return "Souvent, pour s\'amuser, les hommes d\'équipage";
         }
     }
 }
