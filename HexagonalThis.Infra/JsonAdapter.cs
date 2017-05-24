@@ -14,9 +14,19 @@ namespace HexagonalThis.Infra
 
         public string Post(string jsonRequest)
         {
+            // Adapts from the Json model to the domain one.
             var request = JsonConvert.DeserializeObject<JsonRequest>(jsonRequest);
+            
+            // call the business logic
+            var rawResult = this.verseProvider.GiveMeVerses(request.numberOfLines);
 
-            return this.verseProvider.GiveMeVerses(request.numberOfLines);
+            // Adapts from the business domain to the json one.
+            return BuildJsonResult(request.numberOfLines, rawResult);
+        }
+
+        private string BuildJsonResult(int numberOfLineRequested, string rawResult)
+        {
+            return $"{{\r\n\t\"verses\": {{\r\n\t\"requested lines\": {numberOfLineRequested},\r\n\t\"fragment\": \"{rawResult}\"\r\n\t}}\r\n}}";
         }
     }
 }
