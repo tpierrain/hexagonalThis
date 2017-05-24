@@ -7,17 +7,16 @@ namespace HexagonalThis.Tests.Infra
     public class Hexagon : IProvideVerses
     {
         private readonly IKnowLotsOfPoetry poetryProvider;
+        private Poet poet;
 
         public string GiveMeVerses(int numberOfVerse)
         {
-            var poem = this.poetryProvider.FindRandomPoem();
-            var lines = poem.Split(new []{"\r\n"}, StringSplitOptions.RemoveEmptyEntries);
-
-            return string.Join("\r\n", lines.Take(numberOfVerse));
+            return this.poet.GiveMeVerses(numberOfVerse);
         }
 
         public Hexagon(IKnowLotsOfPoetry poetryProvider)
         {
+            this.poet = new Poet(poetryProvider);
             this.poetryProvider = poetryProvider;
         }
     }
