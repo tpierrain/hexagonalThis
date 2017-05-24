@@ -1,4 +1,4 @@
-namespace HexagonalThis.Tests.Domain
+namespace HexagonalThis.Domain
 {
     public interface IProvideVerses
     {

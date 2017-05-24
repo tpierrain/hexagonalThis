@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace HexagonalThis.Tests.Domain
+namespace HexagonalThis.Domain
 {
     public class Poet : IProvideVerses
     {

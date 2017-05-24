@@ -1,5 +1,5 @@
-﻿using HexagonalThis.Tests.Domain;
-using HexagonalThis.Tests.Infra;
+﻿using HexagonalThis.Domain;
+using HexagonalThis.Infra;
 using NFluent;
 using NSubstitute;
 using NUnit.Framework;

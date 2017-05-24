@@ -1,4 +1,4 @@
-namespace HexagonalThis.Tests.Infra
+namespace HexagonalThis.Infra
 {
     public class JsonRequest
     {

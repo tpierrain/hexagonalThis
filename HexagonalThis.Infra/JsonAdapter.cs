@@ -1,7 +1,7 @@
-using HexagonalThis.Tests.Domain;
+using HexagonalThis.Domain;
 using Newtonsoft.Json;
 
-namespace HexagonalThis.Tests.Infra
+namespace HexagonalThis.Infra
 {
     public class JsonAdapter
     {

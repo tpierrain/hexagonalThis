@@ -1,23 +1,19 @@
-﻿using System;
-using System.Linq;
-using HexagonalThis.Tests.Domain;
+﻿using HexagonalThis.Domain;
 
-namespace HexagonalThis.Tests.Infra
+namespace HexagonalThis.Infra
 {
     public class Hexagon : IProvideVerses
     {
-        private readonly IKnowLotsOfPoetry poetryProvider;
-        private Poet poet;
+        private readonly Poet poet;
 
         public string GiveMeVerses(int numberOfVerse)
         {
-            return this.poet.GiveMeVerses(numberOfVerse);
+            return poet.GiveMeVerses(numberOfVerse);
         }
 
         public Hexagon(IKnowLotsOfPoetry poetryProvider)
         {
-            this.poet = new Poet(poetryProvider);
-            this.poetryProvider = poetryProvider;
+            poet = new Poet(poetryProvider);
         }
     }
 }
