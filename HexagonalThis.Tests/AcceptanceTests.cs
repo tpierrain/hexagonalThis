@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using Newtonsoft.Json;
 using NFluent;
 using NSubstitute;
 using NUnit.Framework;
@@ -46,15 +47,24 @@ namespace HexagonalThis.Tests
 
     public class JsonAdapter
     {
+        private readonly IProvideVerses verseProvider;
+
         public JsonAdapter(IProvideVerses verseProvider)
         {
-            throw new NotImplementedException();
+            this.verseProvider = verseProvider;
         }
 
         public string Post(string jsonRequest)
         {
-            throw new NotImplementedException();
+            var request = JsonConvert.DeserializeObject<JsonRequest>(jsonRequest);
+
+            return this.verseProvider.GiveMeVerses(request.numberOfLines);
         }
+    }
+
+    public class JsonRequest
+    {
+        public int numberOfLines;
     }
 
     public class Hexagon : IProvideVerses
