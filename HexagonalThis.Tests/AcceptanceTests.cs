@@ -20,7 +20,7 @@ namespace HexagonalThis.Tests
     {
         public string GiveMeVerses(int numberOfVerse)
         {
-            throw new NotImplementedException();
+            return "Souvent, pour s\'amuser, les hommes d\'équipage";
         }
     }
 }
