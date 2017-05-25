@@ -25,6 +25,7 @@ namespace HexagonalThis.Domain
             return string.Join("\r\n", lines.Take(numberOfVerse));
         }
 
+        // Private class kept here to maintain the first acceptance test (for pedagogical purpose only)
         private class HardCodedPoetryProvider : IKnowLotsOfPoetry
         {
             public string FindRandomPoem()

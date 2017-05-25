@@ -9,7 +9,7 @@ namespace HexagonalThis.Tests
     public class JsonAdapterTests
     {
         [Test]
-        public void Should_return_json_answer_when_asking_a_few_lines()
+        public void Should_return_json_answer_when_asking_a_few_Verses()
         {
             var verseProvider = Substitute.For<IProvideVerses>();
             verseProvider.GiveMeVerses(2).Returns("one\r\ntwo");
