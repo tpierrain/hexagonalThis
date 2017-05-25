@@ -12,7 +12,7 @@ namespace HexagonalThis.Infra
             this.verseProvider = verseProvider;
         }
 
-        public string Post(string jsonRequest)
+        public string GetSomeVerses(string jsonRequest)
         {
             // Adapts from the Json model to the domain one.
             var request = JsonConvert.DeserializeObject<JsonRequest>(jsonRequest);

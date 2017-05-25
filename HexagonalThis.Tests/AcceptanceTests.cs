@@ -38,7 +38,7 @@ namespace HexagonalThis.Tests
             var hexagon = new Hexagon(poetryProvider);
             var jsonAdapter = new JsonAdapter(hexagon);
 
-            var verses = jsonAdapter.Post("{ \"numberOfLines\": 3}");
+            var verses = jsonAdapter.GetSomeVerses("{ \"numberOfLines\": 3}");
             Check.That(verses).IsEqualTo("{\r\n\t\"verses\": {\r\n\t\"requested lines\": 3,\r\n\t\"fragment\": \"If you could read a leaf or tree\r\nyou’d have no need of books.\r\n-- © Alistair Cockburn (1987)\"\r\n\t}\r\n}");
         }
     }
