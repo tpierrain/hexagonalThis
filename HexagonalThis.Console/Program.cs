@@ -1,5 +1,5 @@
-﻿using HexagonalThis.ConsoleApp.Domain;
-using HexagonalThis.ConsoleApp.Infra;
+﻿using HexagonalThis.ConsoleApp.Adapters;
+using HexagonalThis.Domain;
 
 namespace HexagonalThis.ConsoleApp
 {
@@ -7,16 +7,19 @@ namespace HexagonalThis.ConsoleApp
     {
         static void Main(string[] args)
         {
+            var firstArgument = args[0];
+
             // instantiate the hexagon
             var poet = new Poet();
 
             // Instantiate the left-side adapter to request the hexagon
             var consoleAdapter = new ConsoleAdapter(poet);
 
-            var firstArgument = args[0];
-            consoleAdapter.RequestVerses(firstArgument);
+            System.Console.WriteLine($"Here are the first {firstArgument} verses:\n");
 
-            System.Console.WriteLine("Type enter to exit");
+            consoleAdapter.RequestFirstVersesForAPoem(firstArgument);
+
+            System.Console.WriteLine("\nType enter to exit");
             System.Console.ReadLine();
         }
     }

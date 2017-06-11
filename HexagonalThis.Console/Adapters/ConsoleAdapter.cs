@@ -1,7 +1,7 @@
 using System;
-using HexagonalThis.ConsoleApp.Domain;
+using HexagonalThis.Domain;
 
-namespace HexagonalThis.ConsoleApp.Infra
+namespace HexagonalThis.ConsoleApp.Adapters
 {
     public class ConsoleAdapter
     {
@@ -41,6 +41,7 @@ namespace HexagonalThis.ConsoleApp.Infra
             this.publicationStrategy.WriteLine(verses);
         }
 
+        // default publication strategy: write to the Console
         private class ConsolePublicationStrategy : IWriteStuffsToTheConsole
         {
             public void WriteLine(string text)

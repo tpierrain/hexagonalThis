@@ -1,4 +1,4 @@
-﻿namespace HexagonalThis.ConsoleApp.Infra
+﻿namespace HexagonalThis.ConsoleApp.Adapters
 {
     public interface IWriteStuffsToTheConsole
     {

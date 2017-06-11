@@ -1,6 +1,5 @@
-﻿using System;
-using HexagonalThis.ConsoleApp.Domain;
-using HexagonalThis.ConsoleApp.Infra;
+﻿using HexagonalThis.ConsoleApp.Adapters;
+using HexagonalThis.Domain;
 using NFluent;
 using NSubstitute;
 using NUnit.Framework;
@@ -12,9 +11,8 @@ namespace HexagonalThis.Tests
         [Test]
         public void Should_give_verses_when_asking_poetry()
         {
-            // Simplest Driver possible
-            // port: IProvideVerses
-            // API verb: Poet.GiveMeSomePoetry();
+            // Simplest possible Driver
+            // Introducting a first port: IProvideVerses with 1 verb only: GiveMeSomePoetry()
             IProvideVerses poet = new Poet();
             var verses = poet.GiveMeSomePoetry();
 
@@ -24,14 +22,12 @@ namespace HexagonalThis.Tests
         [Test]
         public void Should_give_verses_from_a_poetryLibrary()
         {
-            // Introducing a second port: IKnowABunchOfPoetry
-            // port: IKnowABunchOfPoetry
-            // API verb: Poet.GetPoem();
+            // Introducing a second port: IKnowABunchOfPoetry with 1 verb: GetPoem()
             var poetryLibrary = Substitute.For<IKnowABunchOfPoetry>();
             poetryLibrary.GetPoem().Returns("blah");
 
             // instantiate the hexagon
-            var poet = new Poet(poetryLibrary);
+            IProvideVerses poet = new Poet(poetryLibrary);
             var verses = poet.GiveMeSomePoetry();
 
             Check.That(verses).IsEqualTo("blah");
@@ -49,10 +45,12 @@ namespace HexagonalThis.Tests
 
             // Instantiate the left-side adapter to request the hexagon
             var publicationStrategy = Substitute.For<IWriteStuffsToTheConsole>();
-
             var consoleAdapter = new ConsoleAdapter(poet, publicationStrategy);
+
+            // Use the adapter
             consoleAdapter.RequestVerses("I need poetry!");
 
+            // Assert poetry has been published
             publicationStrategy.Received().WriteLine("I want to sleep\r\nSwat the flies\r\nSoftly, please.\r\n\r\n-- Masaoka Shiki (1867-1902)");
         }
 

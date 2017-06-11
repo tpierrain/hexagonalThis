@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{92D96657-E295-4BB2-A679-D2212F633F58}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>HexagonalThis.ConsoleApp</RootNamespace>
-    <AssemblyName>HexagonalThis.ConsoleApp</AssemblyName>
+    <ProjectGuid>{BD87A664-EEEF-4FF5-95E1-410DF09AEF5E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HexagonalThis.Domain</RootNamespace>
+    <AssemblyName>HexagonalThis.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,19 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\ConsoleAdapter.cs" />
-    <Compile Include="Adapters\IWriteStuffsToTheConsole.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="IKnowABunchOfPoetry.cs" />
+    <Compile Include="IProvideVerses.cs" />
+    <Compile Include="Poet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HexagonalThis.Domain\HexagonalThis.Domain.csproj">
-      <Project>{bd87a664-eeef-4ff5-95e1-410df09aef5e}</Project>
-      <Name>HexagonalThis.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

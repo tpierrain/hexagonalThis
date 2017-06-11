@@ -1,4 +1,4 @@
-namespace HexagonalThis.ConsoleApp.Domain
+namespace HexagonalThis.Domain
 {
     public interface IProvideVerses
     {

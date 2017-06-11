@@ -60,6 +60,10 @@
       <Project>{92d96657-e295-4bb2-a679-d2212f633f58}</Project>
       <Name>HexagonalThis.Console</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HexagonalThis.Domain\HexagonalThis.Domain.csproj">
+      <Project>{bd87a664-eeef-4ff5-95e1-410df09aef5e}</Project>
+      <Name>HexagonalThis.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

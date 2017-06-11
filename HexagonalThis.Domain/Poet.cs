@@ -1,13 +1,13 @@
 using System;
 using System.Linq;
 
-namespace HexagonalThis.ConsoleApp.Domain
+namespace HexagonalThis.Domain
 {
     public class Poet : IProvideVerses
     {
         private IKnowABunchOfPoetry poetryLibrary;
 
-        public Poet()
+        public Poet() : this (new HardCodedPoetryLibrary())
         {
         }
 
@@ -33,6 +33,14 @@ namespace HexagonalThis.ConsoleApp.Domain
             var splitLines = verses.Split(new string[] {"\r\n"}, StringSplitOptions.RemoveEmptyEntries);
 
             return string.Join("\r\n", splitLines.Take(numberOfLine));
+        }
+
+        private class HardCodedPoetryLibrary : IKnowABunchOfPoetry
+        {
+            public string GetPoem()
+            {
+                return "If you could read a leaf or tree\r\nyou’d have no need of books.\r\n-- © Alistair Cockburn (1987)";
+            }
         }
     }
 }
