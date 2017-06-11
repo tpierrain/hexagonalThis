@@ -16,13 +16,50 @@ namespace HexagonalThis.Tests
 
             Check.That(verses).IsEqualTo("If you could read a leaf or tree\r\nyou’d have no need of books.\r\n-- © Alistair Cockburn (1987)");
         }
-        
+
+        [Test]
+        public void Should_give_verses_from_a_poetryLibrary()
+        {
+            // Mock a rRepository
+            var poetryLibrary = Substitute.For<IKnowABunchOfPoetry>();
+            poetryLibrary.GetPoem().Returns("blah");
+
+            // instantiate the hexagon
+            var poet = new Poet(poetryLibrary);
+            var verses = poet.GiveMeSomePoetry();
+
+            Check.That(verses).IsEqualTo("blah");
+        }
+
+
+    }
+
+    public interface IKnowABunchOfPoetry
+    {
+        string GetPoem();
     }
 
     public class Poet
     {
+        private IKnowABunchOfPoetry poetryLibrary;
+
+        public Poet()
+        {
+        }
+
+        // constructor
+        public Poet(IKnowABunchOfPoetry poetryLibrary)
+        {
+            this.poetryLibrary = poetryLibrary;
+        }
+
         public object GiveMeSomePoetry()
         {
+            if (poetryLibrary != null)
+            {
+                return poetryLibrary.GetPoem();
+            }
+
             return "If you could read a leaf or tree\r\nyou’d have no need of books.\r\n-- © Alistair Cockburn (1987)";
         }
     }
