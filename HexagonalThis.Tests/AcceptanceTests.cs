@@ -10,8 +10,9 @@ namespace HexagonalThis.Tests
         public void Should_give_verses_when_asking_poetry()
         {
             // Simplest Driver possible
-            // port: Poet.GiveMeSomePoetry();
-            var poet = new Poet();
+            // port: IProvideVerses
+            // API verb: Poet.GiveMeSomePoetry();
+            IProvideVerses poet = new Poet();
             var verses = poet.GiveMeSomePoetry();
 
             Check.That(verses).IsEqualTo("If you could read a leaf or tree\r\nyou’d have no need of books.\r\n-- © Alistair Cockburn (1987)");
@@ -20,7 +21,9 @@ namespace HexagonalThis.Tests
         [Test]
         public void Should_give_verses_from_a_poetryLibrary()
         {
-            // Mock a rRepository
+            // Introducing a second port: IKnowABunchOfPoetry
+            // port: IKnowABunchOfPoetry
+            // API verb: Poet.GetPoem();
             var poetryLibrary = Substitute.For<IKnowABunchOfPoetry>();
             poetryLibrary.GetPoem().Returns("blah");
 
@@ -31,7 +34,6 @@ namespace HexagonalThis.Tests
             Check.That(verses).IsEqualTo("blah");
         }
 
-
     }
 
     public interface IKnowABunchOfPoetry
@@ -39,7 +41,12 @@ namespace HexagonalThis.Tests
         string GetPoem();
     }
 
-    public class Poet
+    public interface IProvideVerses
+    {
+        string GiveMeSomePoetry();
+    }
+
+    public class Poet : IProvideVerses
     {
         private IKnowABunchOfPoetry poetryLibrary;
 
@@ -53,7 +60,7 @@ namespace HexagonalThis.Tests
             this.poetryLibrary = poetryLibrary;
         }
 
-        public object GiveMeSomePoetry()
+        public string GiveMeSomePoetry()
         {
             if (poetryLibrary != null)
             {
