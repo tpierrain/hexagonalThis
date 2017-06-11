@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Tests", "HexagonalThis.Tests\HexagonalThis.Tests.csproj", "{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Console", "HexagonalThis.Console\HexagonalThis.Console.csproj", "{92D96657-E295-4BB2-A679-D2212F633F58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D96657-E295-4BB2-A679-D2212F633F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D96657-E295-4BB2-A679-D2212F633F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D96657-E295-4BB2-A679-D2212F633F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D96657-E295-4BB2-A679-D2212F633F58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
