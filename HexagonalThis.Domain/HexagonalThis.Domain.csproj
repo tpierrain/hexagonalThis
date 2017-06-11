@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IKnowABunchOfPoetry.cs" />
-    <Compile Include="IProvideVerses.cs" />
     <Compile Include="Poet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
