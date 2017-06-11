@@ -3,6 +3,14 @@ using System.Linq;
 
 namespace HexagonalThis.Domain
 {
+    // The 1st port to 'enter' the Hexagon
+    public interface IProvideVerses
+    {
+        string GiveMeSomePoetry();
+        string GiveMeLinesOfPoetry(int numberOfLine);
+    }
+
+    // The hexagon
     public class Poet : IProvideVerses
     {
         private IKnowABunchOfPoetry poetryLibrary;

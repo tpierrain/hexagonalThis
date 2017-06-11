@@ -3,6 +3,11 @@ using HexagonalThis.Domain;
 
 namespace HexagonalThis.ConsoleApp.Adapters
 {
+    public interface IWriteStuffsToTheConsole
+    {
+        void WriteLine(string text);
+    }
+
     public class ConsoleAdapter
     {
         private readonly IProvideVerses poet;
