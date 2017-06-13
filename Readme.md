@@ -64,4 +64,32 @@ The hexagon must expose one or multiple ports. Here, the [__Poet__](https://gith
 
 ![Hexagon](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/A3StepsInitialization.PNG?raw=true)
 
+Below, a typical hexagonal architecture initialization:
 
+
+````CSharp
+
+    // ASP.NET Startup class...
+
+    // This method gets called by the runtime. Use this method to add services to the container.
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // Add framework services.
+        services.AddMvc();
+
+        // 1. Instantiate adapters to go out
+        var trainDataService = new TrainDataService(UriTrainDataService);
+        var bookingReferenceService = new BookingReferenceService(UriBookingReferenceService);
+
+        // 2. Instantiate the hexagon (here, the usage of hexagonal 
+        //    architecture is made explicit with a thin 'Hexagon' wrapper)
+        var hexagon = new Hexagon(trainDataService, bookingReferenceService);
+
+        // 3. Instantiate the "I need to enter/ask" adapter
+        var reserveSeatsAdapter = new ReserveSeatsRestAdapter(hexagon);
+
+        // All your application keeps is a reference to the "I need to enter/ask" adapters (here registered as singleton within the ASP.NET container)
+        services.AddSingleton<ReserveSeatsRestAdapter>(reserveSeatsAdapter);
+    }
+
+````
