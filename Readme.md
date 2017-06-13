@@ -1,5 +1,8 @@
 # hexagonalThis
-A simple kata to live-code with Alistair about Hexagonal Architecture
+A simple kata to live-code with [__Alistair__](http://alistair.cockburn.us/) about __Hexagonal Architecture__
+
+
+![HexagonalTitle](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/HexagonalInANutshell.png?raw=true)
 
 
 ## Ports? Adapters?
@@ -27,13 +30,13 @@ A port matches one intention (usually an interface in C# or java) but may have m
 ````
 
 
-![warning]((https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/warning.png?raw=true)__Note: All ports belong to the Domain side__
+![warning](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/warning.png?raw=true)  __Note: All ports belong to the Domain side__
 
 
 ### Adapters
 __An Adapter is something which allows to enter/exit the hexagon__. An Adapter is both our code which maps the infra <-> domain data models (i.e. in the GoF adapter pattern sense) and everything that allows us to enter/exit the hexagon (e.g.: a database driver, your favorite HTTP stack, etc).
 
-![warning]((https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/warning.png?raw=true)__Note: All adapters belong to the Infra side__
+![warning](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/warning.png?raw=true)  __Note: All adapters belong to the Infra(structure) side__
 
 
 
