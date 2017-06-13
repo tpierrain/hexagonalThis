@@ -85,7 +85,7 @@ Below, a typical hexagonal architecture initialization:
         // Add framework services.
         services.AddMvc();
 
-        // 1. Instantiate adapters to go out
+        // 1. Instantiate the "I need to go out" adapters
         var trainDataService = new TrainDataService(UriTrainDataService);
         var bookingReferenceService = new BookingReferenceService(UriBookingReferenceService);
 
