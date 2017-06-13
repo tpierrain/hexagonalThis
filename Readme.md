@@ -26,11 +26,16 @@ A port matches one intention (usually an interface in C# or java) but may have m
 
 ````
 
-#### Note: All ports belong to the Domain side
+
+#### ![warning]((https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/warning.png?raw=true) Note: All ports belong to the Domain side
 
 
 ### Adapters
-__An Adapter is something that belongs to the Infra(structure) side__ and which allows to enter/exit the hexagon. An Adapter is both our code which maps the infra <-> domain data models (i.e. in the GoF adapter pattern sense) and everything that allows us to enter/exit the hexagon (e.g.: a database driver, your favorite HTTP stack, etc).
+__An Adapter is something which allows to enter/exit the hexagon__. An Adapter is both our code which maps the infra <-> domain data models (i.e. in the GoF adapter pattern sense) and everything that allows us to enter/exit the hexagon (e.g.: a database driver, your favorite HTTP stack, etc).
+
+#### ![warning]((https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/warning.png?raw=true) Note: All adapters belong to the Infra side
+
+
 
 Here, we have 1 Adapter so far:
  - [__ConsoleAdapter__](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/HexagonalThis.Console/Adapters/ConsoleAdapter.cs)
