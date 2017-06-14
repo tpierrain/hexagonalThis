@@ -92,7 +92,8 @@ Below, a typical hexagonal architecture initialization:
         var bookingReferenceService = new BookingReferenceService(UriBookingReferenceService);
 
         // 2. Instantiate the hexagon (here, the usage of hexagonal 
-        //    architecture is made explicit with a thin 'Hexagon' wrapper)
+        //    architecture is made explicit with a thin 'Hexagon' wrapper
+        //    which exposes a IReserveSeats port)
         var hexagon = new Hexagon(trainDataService, bookingReferenceService);
 
         // 3. Instantiate the "I need to enter/ask" adapter
