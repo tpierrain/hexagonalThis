@@ -78,7 +78,7 @@ The hexagon must expose one or multiple ports (represented as lollipops in the d
 
 ![Hexagon](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/A3StepsInitialization.PNG?raw=true)
 
-Below, a typical hexagonal architecture initialization:
+Below, a typical hexagonal architecture initialization (note: extracted from another project) :
 
 
 ````CSharp
