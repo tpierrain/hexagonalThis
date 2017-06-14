@@ -34,7 +34,7 @@ A port matches one intention (usually an interface in C# or java) but may have m
 
 
 ### Adapters
-__An Adapter is something which allows to enter/exit the hexagon__. An Adapter is both our code which maps the infra <-> domain data models (i.e. in the GoF adapter pattern sense) and everything that allows us to enter/exit the hexagon (e.g.: a database driver, your favorite HTTP stack, etc).
+__An Adapter is something which allows to enter/exit the hexagon__. An Adapter is both our code which maps the infra <-> domain data models (i.e. in the GoF adapter pattern sense) and everything needed to enter/exit the hexagon (e.g.: a database driver, a Message Oriented Middleware API, your favorite HTTP stack, etc).
 
 ![warning](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/warning.png?raw=true)  __Note: All adapters belong to the Infra(structure) side__
 
@@ -67,6 +67,8 @@ Here is a typical method from this Adapter:
 
 The hexagon must expose one or multiple ports. Here, the [__Poet__](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/HexagonalThis.Domain/Poet.cs#L13) hexagon implements the __IProvideVerses__ port and use the __IKnowABunchOfPoetry__ port to ask an external service some poetry to work with.
 
+### __All the external {tests/users/systems} use one of the "I need to enter the hexagon" Port/Adapter__ (here we have only one: the ConsoleAdapter).
+
 ![Hexagon](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/HexagonalThis.png?raw=true)
 
 
@@ -97,7 +99,7 @@ Below, a typical hexagonal architecture initialization:
         var hexagon = new Hexagon(trainDataService, bookingReferenceService);
 
         // 3. Instantiate the "I need to enter/ask" adapter which needs
-        //    a IReserveSeats port instance as a constructor argument
+        //    a IReserveSeats port instance as its constructor argument
         var reserveSeatsAdapter = new ReserveSeatsRestAdapter(hexagon);
 
         // All your application keeps is a reference to the "I need to enter/ask" ADAPTER(S) (here registered as singleton within the ASP.NET container)
