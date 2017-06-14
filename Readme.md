@@ -96,10 +96,11 @@ Below, a typical hexagonal architecture initialization:
         //    which exposes a IReserveSeats port)
         var hexagon = new Hexagon(trainDataService, bookingReferenceService);
 
-        // 3. Instantiate the "I need to enter/ask" adapter
+        // 3. Instantiate the "I need to enter/ask" adapter which needs
+        //    a IReserveSeats port instance as a constructor argument
         var reserveSeatsAdapter = new ReserveSeatsRestAdapter(hexagon);
 
-        // All your application keeps is a reference to the "I need to enter/ask" adapters (here registered as singleton within the ASP.NET container)
+        // All your application keeps is a reference to the "I need to enter/ask" ADAPTER(S) (here registered as singleton within the ASP.NET container)
         services.AddSingleton<ReserveSeatsRestAdapter>(reserveSeatsAdapter);
     }
 
