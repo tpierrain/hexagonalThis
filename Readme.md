@@ -8,7 +8,7 @@ A simple kata to live-code with [__Alistair__](http://alistair.cockburn.us/) abo
 ## Ports? Adapters?
 
 ### Ports
-A port matches one intention (usually an interface in C# or java) but may have multiple verbs/methods. e.g.:
+A port matches one intention (usually represented as an interface in C# or java) but may have multiple verbs/methods. e.g.:
 
 ````CSharp
 
@@ -43,6 +43,8 @@ __An Adapter is something which allows to enter/exit the hexagon__. An Adapter i
 Here, we have 1 Adapter so far:
  - [__ConsoleAdapter__](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/HexagonalThis.Console/Adapters/ConsoleAdapter.cs)
 
+But we may add tons of others (e.g. REST, FileSystem or database adapters)
+
 Here is a typical method from this Adapter:
 
 ````CSharp
@@ -65,7 +67,7 @@ Here is a typical method from this Adapter:
 
 ## The Hexagon
 
-The hexagon must expose one or multiple ports. Here, the [__Poet__](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/HexagonalThis.Domain/Poet.cs#L13) hexagon implements the __IProvideVerses__ port and use the __IKnowABunchOfPoetry__ port to ask an external service some poetry to work with.
+The hexagon must expose one or multiple ports (represented as lollipops in the diagram below). Here, the [__Poet__](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/HexagonalThis.Domain/Poet.cs#L13) hexagon implements the __IProvideVerses__ port and use the __IKnowABunchOfPoetry__ port to ask an external service some poetry to work with.
 
 ### __All the external {tests/users/systems} use one of the "I need to enter the hexagon" Port/Adapter__ (here we have only one: the ConsoleAdapter).
 
