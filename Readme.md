@@ -67,7 +67,7 @@ Here is a typical method from this Adapter:
 
 ## The Hexagon
 
-The hexagon must expose one or multiple ports (represented as lollipops in the diagram below). Here, the [__Poet__](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/HexagonalThis.Domain/Poet.cs#L13) hexagon implements the __IProvideVerses__ port and use the __IKnowABunchOfPoetry__ port to ask an external service some poetry to work with.
+The hexagon must expose one or multiple ports (represented as lollipops in the diagram below). Here, the [__Poet__](https://github.com/tpierrain/hexagonalThis/blob/confCallWithAlistair/HexagonalThis.Domain/Poet.cs#L13) "hexagon" implements the __IProvideVerses__ port and use the __IKnowABunchOfPoetry__ port to ask an external service some poetry to work with.
 
 ### __All the external {tests/users/systems} use one of the "I need to enter the hexagon" Port/Adapter__ (here we have only one: the ConsoleAdapter).
 
