@@ -49,13 +49,15 @@ Here is a typical method from this Adapter:
 
     public void RequestFirstVersesForAPoem(string line)
     {
-        // Map the request passed by the infra side (here Console app arguments)
+        // Adapt the request passed by the infra side (here Console app arguments) 
+        // to a busines-logic-ready format (here a simple int)
         int numberOfLine = int.Parse(line);
 
-        // Call the business logic
+        // Call the appropriated business logic (port/verb)
         var verses = this.poet.GiveMeLinesOfPoetry(numberOfLine);
 
-        // Get back with the answer onto the Infra side (Console)
+        // Adapt the answer from the business logic to something that
+        // can be consumed back from the Infra side (here Console output)
         this.publicationStrategy.WriteLine(verses);
     }
 
