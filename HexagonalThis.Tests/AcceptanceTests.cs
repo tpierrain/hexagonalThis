@@ -10,27 +10,6 @@ namespace HexagonalThis.Tests
     public class AcceptanceTests
     {
         [Test]
-        public void Should_test_with_NSubstitute()
-        {
-            // The NSubstitute version
-            IKnowABunchOfPoetry poetryProvider = Substitute.For<IKnowABunchOfPoetry>();
-            poetryProvider.GetPoem().Returns("I am the master of my fate :\r\nI am the captain of my soul.");
-
-            Check.That(poetryProvider.GetPoem()).IsEqualTo("I am the master of my fate :\r\nI am the captain of my soul.");
-        }
-
-        [Test]
-        public void Should_test_with_moq()
-        {
-            // The moq version
-            var mock = new Mock<IKnowABunchOfPoetry>(); // Actually what I need is a Stub, not a Mock ;-)
-            mock.Setup(provider => provider.GetPoem()).Returns("I am the master of my fate :\r\nI am the captain of my soul.");
-            IKnowABunchOfPoetry poetProvider = mock.Object;
-
-            Check.That(poetProvider.GetPoem()).IsEqualTo("I am the master of my fate :\r\nI am the captain of my soul."); 
-        }
-
-        [Test]
         public void Should_give_verses_when_asking_poetry()
         {
             // Simplest possible Driver
