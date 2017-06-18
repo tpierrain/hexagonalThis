@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Domain", "Hex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Infra", "HexagonalThis.Infra\HexagonalThis.Infra.csproj", "{86459249-1EF6-47A6-B50C-B9F843E3F41F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Console", "HexagonalThis.Console\HexagonalThis.Console.csproj", "{8DD4CCDE-8E95-4755-9A44-7A425467A9F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{86459249-1EF6-47A6-B50C-B9F843E3F41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86459249-1EF6-47A6-B50C-B9F843E3F41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86459249-1EF6-47A6-B50C-B9F843E3F41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DD4CCDE-8E95-4755-9A44-7A425467A9F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DD4CCDE-8E95-4755-9A44-7A425467A9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DD4CCDE-8E95-4755-9A44-7A425467A9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD4CCDE-8E95-4755-9A44-7A425467A9F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

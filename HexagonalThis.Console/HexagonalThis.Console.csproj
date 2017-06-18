@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{86459249-1EF6-47A6-B50C-B9F843E3F41F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HexagonalThis.Infra</RootNamespace>
-    <AssemblyName>HexagonalThis.Infra</AssemblyName>
+    <ProjectGuid>{8DD4CCDE-8E95-4755-9A44-7A425467A9F5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HexagonalThis.Console</RootNamespace>
+    <AssemblyName>HexagonalThis.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,15 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleAdapter.cs" />
-    <Compile Include="IWriteStuffOnTheConsole.cs" />
-    <Compile Include="PoemFileAdapter.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HexagonalThis.Domain\HexagonalThis.Domain.csproj">
       <Project>{a7419f99-a64f-44c7-baf9-0694f904e9be}</Project>
       <Name>HexagonalThis.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HexagonalThis.Infra\HexagonalThis.Infra.csproj">
+      <Project>{86459249-1ef6-47a6-b50c-b9f843e3f41f}</Project>
+      <Name>HexagonalThis.Infra</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
