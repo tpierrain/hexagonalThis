@@ -5,6 +5,6 @@ namespace HexagonalThis.Tests
 {
     public class AcceptanceTests
     {
-        
+
     }
 }
