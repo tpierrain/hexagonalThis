@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Domain", "Hex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Infra", "HexagonalThis.Infra\HexagonalThis.Infra.csproj", "{86459249-1EF6-47A6-B50C-B9F843E3F41F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Console", "HexagonalThis.Console\HexagonalThis.Console.csproj", "{8FEE11AF-7A93-4470-B51E-972D84E3C962}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C7C0C77-6D09-4122-AC3A-62178D17A1BE}"
+	ProjectSection(SolutionItems) = preProject
+		Rimbaud.txt = Rimbaud.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{86459249-1EF6-47A6-B50C-B9F843E3F41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86459249-1EF6-47A6-B50C-B9F843E3F41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86459249-1EF6-47A6-B50C-B9F843E3F41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FEE11AF-7A93-4470-B51E-972D84E3C962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FEE11AF-7A93-4470-B51E-972D84E3C962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FEE11AF-7A93-4470-B51E-972D84E3C962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FEE11AF-7A93-4470-B51E-972D84E3C962}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
