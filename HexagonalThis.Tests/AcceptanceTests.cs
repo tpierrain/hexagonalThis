@@ -35,7 +35,7 @@ namespace HexagonalThis.Tests
         }
 
         [Test]
-        public void Should_provides_verses_when_asked_for_Poetry_with_the_support_Of_aConsoleAdaper()
+        public void Should_provides_verses_when_asked_for_Poetry_through_a_ConsoleAdaper()
         {
             // 1. Instantiate right-side adapter(s) ("I want to go outside the hexagon")
             IObtainPoems poetryLibrary = Substitute.For<IObtainPoems>();
