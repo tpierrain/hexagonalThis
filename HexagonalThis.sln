@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Domain", "Hex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Infra", "HexagonalThis.Infra\HexagonalThis.Infra.csproj", "{86459249-1EF6-47A6-B50C-B9F843E3F41F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E597011E-EDA9-4E30-AE0C-DD5B5F78059D}"
+	ProjectSection(SolutionItems) = preProject
+		Rimbaud.txt = Rimbaud.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
