@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Tests", "HexagonalThis.Tests\HexagonalThis.Tests.csproj", "{37CABEC2-32ED-4BB4-97A3-283EFE7B3D34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Domain", "HexagonalThis.Domain\HexagonalThis.Domain.csproj", "{A7419F99-A64F-44C7-BAF9-0694F904E9BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalThis.Infra", "HexagonalThis.Infra\HexagonalThis.Infra.csproj", "{86459249-1EF6-47A6-B50C-B9F843E3F41F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E597011E-EDA9-4E30-AE0C-DD5B5F78059D}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+		Rimbaud.txt = Rimbaud.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
