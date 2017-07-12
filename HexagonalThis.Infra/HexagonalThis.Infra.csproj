@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleAdapter.cs" />
+    <Compile Include="IWriteStuffOnTheConsole.cs" />
+    <Compile Include="PoemFileAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
